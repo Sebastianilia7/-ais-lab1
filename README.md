@@ -11,6 +11,16 @@ Exempel på alerts:
 - Rootcheck (host-based anomaly detection)
 - System events (agent start/stop)
 
+## Steg 6 – Egna detektionsregler
+
+Eftersom jag använder kursens gemensamma Wazuh-manager har jag inte adminåtkomst till `local_rules.xml` på managern. Därför dokumenteras egna detektionsregler som egna detektionskriterier baserade på loggar och FIM-events från min agent.
+
+| Regel | Trigger | Allvarlighet | Beskrivning |
+|---|---|---|---|
+| Custom Rule 1 | `sudo`-aktivitet från macOS-loggar | Medium | Upptäcker administrativ aktivitet på endpointen. |
+| Custom Rule 2 | Ändring i `/Users/sebastianilia` via FIM/syscheck | High | Upptäcker ändringar i övervakad användarkatalog. |
+| Custom Rule 3 | Ovanliga host/rootcheck-events | Medium | Upptäcker host-baserade avvikelser och säkerhetskontroller. |
+
 ## Steg 7 – File Integrity Monitoring (FIM)
 FIM (syscheck) aktiverades och konfigurerades för att övervaka `/Users/sebastianilia`.
 
