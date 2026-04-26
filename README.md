@@ -29,3 +29,15 @@ Efter omstart av agenten genererades säkerhetsevents från agenten, inklusive:
 - System monitoring events
 
 Detta bekräftar att fil- och systemövervakning fungerar och att agenten skickar dessa till Wazuh manager.
+
+## Steg 8 – Python anomalidetektering
+
+Ett enkelt Python-skript skapades för att analysera säkerhetsloggar.
+
+Loggar med nivå ≥ 5 klassificeras som avvikande (anomaly), medan lägre nivåer anses vara normal aktivitet.
+
+Exempel på resultat:
+- sudo command → ANOMALY
+- file change → ANOMALY
+- normal activity → NORMAL
+
