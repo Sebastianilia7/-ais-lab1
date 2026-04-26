@@ -1,4 +1,3 @@
-<img width="573" height="87" alt="Skärmavbild 2026-04-26 kl  16 33 18" src="https://github.com/user-attachments/assets/97267fe0-e45a-4948-a328-fcd22ae49e3a" />
 # Labb 1
 
 ## Steg 4 – Agent
@@ -61,7 +60,11 @@ Exempel på resultat:
 - file change → ANOMALY  
 - normal activity → NORMAL  
 
+### Resultat från skriptet
+<img width="573" height="87" alt="Skärmavbild 2026-04-26 kl  16 33 18" src="https://github.com/user-attachments/assets/97267fe0-e45a-4948-a328-fcd22ae49e3a" />
+
 ---
+
 
 ## Dashboard
 
