@@ -41,3 +41,15 @@ Exempel på resultat:
 - file change → ANOMALY
 - normal activity → NORMAL
 
+## Reflektion
+
+Under labben lärde jag mig hur man:
+- installerar och konfigurerar en Wazuh-agent
+- analyserar säkerhetsloggar i ett SIEM-system
+- använder FIM för att upptäcka filändringar
+- bygger enkel anomalidetektering med Python
+
+Utmaningar:
+- Agent-anslutning och autentisering
+- XML-konfiguration
+- Felsökning av FIM och loggflöde
