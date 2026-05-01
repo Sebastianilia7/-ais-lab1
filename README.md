@@ -83,7 +83,7 @@ Dashboarden visar att agenten skickar säkerhetshändelser i realtid till Wazuh.
 
 ### Dashboard – Threat Hunting
 
-<img width="1470" height="956" alt="Skärmavbild 2026-05-01 kl  15 49 29" src="https://github.com/user-attachments/assets/d7ddf9d7-260c-449b-82b2-0c87a3608cf4" />
+<img width="1470" height="744" alt="Skärmavbild 2026-05-01 kl  15 50 52" src="https://github.com/user-attachments/assets/005cd7d2-0cb2-4031-8b41-443f09c264bb" />
 
 ---
 
