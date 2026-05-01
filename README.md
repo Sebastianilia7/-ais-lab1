@@ -47,11 +47,14 @@ Efter omstart av agenten genererades säkerhetsevents från agenten, inklusive:
 
 Detta bekräftar att fil- och systemövervakning fungerar och att agenten skickar dessa till Wazuh manager.
 
+**Notering:**  
+FIM konfigurerades korrekt och agenten kör syscheck, men inga filändrings-events visades i dashboarden under testtillfället. Detta kan bero på macOS-behörigheter eller fördröjning i Wazuh cloud-miljön.
+
 ---
 
 ## Steg 8 – Python anomalidetektering
 
-Ett enkelt Python-skript skapades för att analysera säkerhetsloggar.
+Ett Python-skript skapades för att analysera säkerhetsloggar.
 
 Loggar med nivå ≥ 5 klassificeras som avvikande (anomaly), medan lägre nivåer anses vara normal aktivitet.
 
@@ -60,28 +63,25 @@ Exempel på resultat:
 - file change → ANOMALY  
 - normal activity → NORMAL  
 
+Den AI-baserade metoden gör det möjligt att upptäcka avvikelser som inte fångas av statiska regler, vilket förbättrar hotdetektering i dynamiska miljöer.
+
 ### Resultat från skriptet
 <img width="573" height="87" alt="Skärmavbild 2026-04-26 kl  16 33 18" src="https://github.com/user-attachments/assets/97267fe0-e45a-4948-a328-fcd22ae49e3a" />
 
 ---
 
-
 ## Dashboard
-Wazuh Dashboard användes som säkerhetsöversikt för att visualisera säkerhetshändelser från agenten.
 
-I Threat Hunting kunde jag se:
+Wazuh Dashboard användes för att analysera säkerhetshändelser i realtid.
 
-- Events från agenten `sebastian-mac-2`
+I Threat Hunting kunde följande observeras:
+- Events från agenten sebastian-mac-2
+- Rootcheck (host-based anomaly detection)
+- System events (start/stop av agent)
 
-- Rootcheck och system events
+Dashboarden ger en översikt över säkerhetsläget och möjliggör snabb identifiering av avvikande beteende.
 
-- Loggdata som analyserats av Wazuh
-
-- Händelser över tid i dashboardens grafer
-
-Dashboarden visar att agenten skickar säkerhetshändelser i realtid till Wazuh.
-
-### Dashboard – Threat Hunting
+### Dashboard
 
 <img width="1470" height="744" alt="Skärmavbild 2026-05-01 kl  15 50 52" src="https://github.com/user-attachments/assets/005cd7d2-0cb2-4031-8b41-443f09c264bb" />
 
@@ -119,13 +119,15 @@ Systemet består av följande komponenter:
 
 ### Dataflöde
 
-Agent (macOS)
-↓
-Wazuh Manager
-↓
-Wazuh Indexer
-↓
-Wazuh Dashboard
+Agent (macOS)  
+↓  
+Wazuh Manager  
+↓  
+Wazuh Indexer  
+↓  
+Wazuh Dashboard  
+
+---
 
 ## Reflektion
 
